@@ -32,11 +32,11 @@
         &.slider, &.slider.vertical {
             border: 0;
             border-radius: $roundness;
-            background-color: shade($bg_color, .5);
+            background-color: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 10%));
 
-            &:hover { background-color: shade($bg_color, .3); }
+            &:hover { background-color: if($variant == 'light', darken($bg_color, 20%), lighten($bg_color, 20%)); }
 
-            &:active { background-color: $selected_bg_color; }
+            &:active { background-color: if($variant == 'light', darken($selected_bg_color, 5%), lighten($selected_bg_color, 10%)); }
 
             &.fine-tune:prelight:active { border: 2px solid transparent; }
         }
@@ -75,7 +75,7 @@
 
     // ubuntu overlay scrollbars
     OsThumb, OsScrollbar {
-        color: shade($bg_color, .7);
+        color: if($variant == 'light', darken($bg_color, 20%), lighten($bg_color, 20%));
 
         &:selected { background-color: $selected_bg_color; }
 
